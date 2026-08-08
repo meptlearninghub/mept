@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const TEN_CHAR_END     = '2027-05-02';
 
   // ================================================================
-  // 📌 သင်သတ်မှတ်လိုသော Key များ
-  //    (အထက်ပါ Array များတွင် သင့် Key များကို ထည့်ပါ)
+  // 📌 Key စာရင်းများ
   // ================================================================
   const EIGHT_CHAR_KEYS = [
     'KEY1AAAA', 'KEY2BBBB', 'KEY3CCCC', 'KEY4DDDD', 'KEY5EEEE',
@@ -27,33 +26,45 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const TEN_CHAR_KEYS = [
     'TENKEY11KKK', 'TENKEY12LLL', 'TENKEY13MMM', 'TENKEY14NNN', 'TENKEY15OOO',
-'TENKEY16PPP', 'TENKEY17QQQ', 'TENKEY18RRR', 'TENKEY19SSS', 'TENKEY20TTT',
-'TENKEY21UUU', 'TENKEY22VVV', 'TENKEY23WWW', 'TENKEY24XXX', 'TENKEY25YYY',
-'TENKEY26ZZZ', 'TENKEY27AAA', 'TENKEY28BBB', 'TENKEY29CCC', 'TENKEY30DDD',
-'TENKEY31EEE', 'TENKEY32FFF', 'TENKEY33GGG', 'TENKEY34HHH', 'TENKEY35III',
-'TENKEY36JJJ', 'TENKEY37KKK', 'TENKEY38LLL', 'TENKEY39MMM', 'TENKEY40NNN'
+    'TENKEY16PPP', 'TENKEY17QQQ', 'TENKEY18RRR', 'TENKEY19SSS', 'TENKEY20TTT',
+    'TENKEY21UUU', 'TENKEY22VVV', 'TENKEY23WWW', 'TENKEY24XXX', 'TENKEY25YYY',
+    'TENKEY26ZZZ', 'TENKEY27AAA', 'TENKEY28BBB', 'TENKEY29CCC', 'TENKEY30DDD',
+    'TENKEY31EEE', 'TENKEY32FFF', 'TENKEY33GGG', 'TENKEY34HHH', 'TENKEY35III',
+    'TENKEY36JJJ', 'TENKEY37KKK', 'TENKEY38LLL', 'TENKEY39MMM', 'TENKEY40NNN'
   ];
 
   // ================================================================
-  //  One‑Time Use Tracking (Key တစ်ခါသာသုံးနိုင်)
+  // 📱 Device Identification & Key Lock Logic
   // ================================================================
-  const USED_KEYS_KEY = 'mept_used_keys';
+  const DEVICE_ID_KEY = 'mept_device_id';
+  const BOUND_KEY = 'mept_bound_key';
 
-  function isKeyUsed(key) {
-    const used = JSON.parse(localStorage.getItem(USED_KEYS_KEY) || '[]');
-    return used.includes(key);
-  }
-
-  function markKeyUsed(key) {
-    const used = JSON.parse(localStorage.getItem(USED_KEYS_KEY) || '[]');
-    if (!used.includes(key)) {
-      used.push(key);
-      localStorage.setItem(USED_KEYS_KEY, JSON.stringify(used));
+  // Device အတွက် Unique ID ထုတ်ပေးခြင်း (သို့မဟုတ် ရှိပြီးသားယူခြင်း)
+  function getDeviceId() {
+    let deviceId = localStorage.getItem(DEVICE_ID_KEY);
+    if (!deviceId) {
+      deviceId = 'DEV-' + Math.random().toString(36).substring(2, 11) + '-' + Date.now();
+      localStorage.setItem(DEVICE_ID_KEY, deviceId);
     }
+    return deviceId;
+  }
+
+  // Key ကို ဤ Device နှင့် ချိတ်ဆက်ခြင်း
+  function bindKeyToDevice(key) {
+    localStorage.setItem(BOUND_KEY, key);
+  }
+
+  // Key ကို ဤ Device တွင် သုံးခွင့်ရှိမရှိ စစ်ဆေးခြင်း
+  function isKeyValidForThisDevice(key) {
+    const boundKey = localStorage.getItem(BOUND_KEY);
+    // ဤ Device မှာ Key မသုံးရသေးပါက သုံးခွင့်ပြုမည်
+    if (!boundKey) return true; 
+    // သုံးဖူးပါက မူလ Bind ခဲ့သော Key နှင့် တူမှသာ သုံးခွင့်ပြုမည်
+    return boundKey === key; 
   }
 
   // ================================================================
-  //  Key သက်တမ်းစစ်ဆေးခြင်း
+  // 🗓️ Key သက်တမ်းစစ်ဆေးခြင်း
   // ================================================================
   function isDateInRange(dateStr, startStr, endStr) {
     const date = new Date(dateStr);
@@ -63,21 +74,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function validateKey(key) {
-    // ပထမ Key length စစ်ဆေးပြီး သက်ဆိုင်ရာ Array ထဲတွင် ရှိမရှိ စစ်ဆေးပါ။
     const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 
     if (key.length === 8 && EIGHT_CHAR_KEYS.includes(key)) {
-      // ၈ လုံး Key အုပ်စု
       return isDateInRange(today, EIGHT_CHAR_START, EIGHT_CHAR_END);
-    } else if (key.length === 10 && TEN_CHAR_KEYS.includes(key)) {
-      // ၁၀ လုံး Key အုပ်စု
+    } else if (key.length === 11 && TEN_CHAR_KEYS.includes(key)) { // TEN_CHAR_KEYS စာရင်းထဲမှ Length ၁၁ လုံးဖြစ်နေ၍ ၁၁ ပြင်ပေးထားပါသည်
       return isDateInRange(today, TEN_CHAR_START, TEN_CHAR_END);
     }
-    return false; // အခြား Key များ သို့မဟုတ် မရှိသော Key
+    return false;
   }
 
   // ================================================================
-  //  Login လုပ်ငန်းစဉ်
+  // 🔐 Login လုပ်ငန်းစဉ်
   // ================================================================
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -91,29 +99,30 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // ၁။ Key သည် တရားဝင် Key ဖြစ်ပြီး သက်တမ်းမကုန်သေးလား စစ်ဆေးပါ။
+    // ၁။ Key သက်တမ်းနှင့် စာရင်းထဲရှိမရှိ စစ်ဆေးခြင်း
     if (!validateKey(enteredKey)) {
       loginError.textContent = '❌ သော့မှားနေပါသည် သို့မဟုတ် သက်တမ်းကုန်ဆုံးနေပါသည်။';
       loginError.style.display = 'block';
       return;
     }
 
-    // ၂။ ဤ Key ကို တစ်ခါသုံးပြီးပြီလား စစ်ဆေးပါ။
-    if (isKeyUsed(enteredKey)) {
-      loginError.textContent = '❌ ဤသော့ကို အသုံးပြုပြီးပါပြီ။ (တစ်ခါသာ အသုံးပြုနိုင်သည်)';
+    // ၂။ ဤ Device တွင် အခြား Key တစ်ခု Lock ကျထားပြီးပြီလား စစ်ဆေးခြင်း
+    if (!isKeyValidForThisDevice(enteredKey)) {
+      loginError.textContent = '❌ ဤ Device တွင် အခြား သော့ ပေါင်းစပ်ထားပြီး ဖြစ်ပါသည်။';
       loginError.style.display = 'block';
       return;
     }
 
-    // ၃။ အားလုံးအောင်မြင်ပါက Login လုပ်ပြီး Key ကို Used စာရင်းသွင်းပါ။
-    markKeyUsed(enteredKey);
+    // ၃။ အားလုံး မှန်ကန်ပါက Key ကို ဒီ Device မှာ Lock မှတ်ပြီး Login ဝင်ခွင့်ပြုမည်
+    bindKeyToDevice(enteredKey);
     localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('currentUser', username);
     loginError.style.display = 'none';
     showMainDashboard();
   });
 
   // ================================================================
-  //  Logout & Session စစ်ဆေးခြင်း
+  // 🚪 Logout & Session စစ်ဆေးခြင်း
   // ================================================================
   logoutBtn.addEventListener('click', () => {
     localStorage.removeItem('isLoggedIn');
@@ -131,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loginError.style.display = 'none';
   }
 
-  // Page load လုပ်တိုင်း Session စစ်ဆေးခြင်း
+  // Page Reload လုပ်သည့်အခါ Auto Login စစ်ဆေးခြင်း
   if (localStorage.getItem('isLoggedIn') === 'true') {
     showMainDashboard();
   }
