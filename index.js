@@ -8,14 +8,24 @@ document.addEventListener('DOMContentLoaded', () => {
   // ================================================================
   // 📌 Key သက်တမ်းသတ်မှတ်ချက်များ
   // ================================================================
-  const EIGHT_CHAR_START = '2026-08-01';
-  const EIGHT_CHAR_END   = '2027-02-02';
+  const EIGHT_CHAR_START = '2026-08-11';
+  const EIGHT_CHAR_END   = '2026-09-12';
+  const SEV_CHAR_START = '2026-08-01';
+  const SEV_CHAR_END   = '2027-02-02';
   const TEN_CHAR_START   = '2026-10-01';
   const TEN_CHAR_END     = '2027-05-02';
 
   // ================================================================
   // 📌 Key စာရင်းများ
   // ================================================================
+  const SEV_CHAR_KEYS = [
+    'MEP7A9X', 'K92B74L', 'MEP3M8Q', 'P47L21R', 'MEP9Z3K',
+    'R81X52M', 'MEP2W6V', 'B34Y89P', 'MEP5T1Z', 'Q62N47X',
+    'MEP8K3R', 'L19V52Q', 'MEP4P7W', 'Z83M21Y', 'MEP6X9T',
+    'X47R82P', 'MEP1B5Z', 'V92Q34M', 'MEP7L8K', 'W31Y52R',
+    'MEP3Z9X', 'N82P47L', 'MEP9T2W', 'Y52M81Q', 'MEP4R3Z',
+    'P19K62X', 'MEP8V7L', 'T34W92M', 'MEP2Y8R', 'G71P52Z'
+];
   const EIGHT_CHAR_KEYS = [
     'KEY1AAAA', 'KEY2BBBB', 'KEY3CCCC', 'KEY4DDDD', 'KEY5EEEE',
     'KEY6FFFF', 'KEY7GGGG', 'KEY8HHHH', 'KEY9IIII', 'KEY10JJJJ',
