@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ================================================================
   // 📌 Key သက်တမ်းသတ်မှတ်ချက်များ
   // ================================================================
-  const EIGHT_CHAR_START = '2026-08-11';
-  const EIGHT_CHAR_END   = '2026-09-12';
   const SEV_CHAR_START = '2026-08-01';
   const SEV_CHAR_END   = '2027-02-02';
+  const EIGHT_CHAR_START = '2026-08-11';
+  const EIGHT_CHAR_END   = '2026-09-12';
   const TEN_CHAR_START   = '2026-10-01';
   const TEN_CHAR_END     = '2027-05-02';
 
@@ -19,15 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // 📌 Key စာရင်းများ
   // ================================================================
   const SEV_CHAR_KEYS = [
-    'MEP7A9X', 'K92B74L', 'MEP3M8Q', 'P47L21R', 'MEP9Z3K',
+  'MEP7A9X', 'K92B74L', 'MEP3M8Q', 'P47L21R', 'MEP9Z3K',
     'R81X52M', 'MEP2W6V', 'B34Y89P', 'MEP5T1Z', 'Q62N47X',
     'MEP8K3R', 'L19V52Q', 'MEP4P7W', 'Z83M21Y', 'MEP6X9T',
     'X47R82P', 'MEP1B5Z', 'V92Q34M', 'MEP7L8K', 'W31Y52R',
     'MEP3Z9X', 'N82P47L', 'MEP9T2W', 'Y52M81Q', 'MEP4R3Z',
     'P19K62X', 'MEP8V7L', 'T34W92M', 'MEP2Y8R', 'G71P52Z'
-];
+  ];
   const EIGHT_CHAR_KEYS = [
-    'KEY1AAAA', 'KEY2BBBB', 'KEY3CCCC', 'KEY4DDDD', 'KEY5EEEE',
+  'KEY1AAAA', 'KEY2BBBB', 'KEY3CCCC', 'KEY4DDDD', 'KEY5EEEE',
     'KEY6FFFF', 'KEY7GGGG', 'KEY8HHHH', 'KEY9IIII', 'KEY10JJJJ',
     'KEY11KKK', 'KEY12LLL', 'KEY13MMM', 'KEY14NNN', 'KEY15OOO',
     'KEY16PPP', 'KEY17QQQ', 'KEY18RRR', 'KEY19SSS', 'KEY20TTT',
@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const DEVICE_ID_KEY = 'mept_device_id';
   const BOUND_KEY = 'mept_bound_key';
 
-  // Device အတွက် Unique ID ထုတ်ပေးခြင်း (သို့မဟုတ် ရှိပြီးသားယူခြင်း)
   function getDeviceId() {
     let deviceId = localStorage.getItem(DEVICE_ID_KEY);
     if (!deviceId) {
@@ -59,22 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
     return deviceId;
   }
 
-  // Key ကို ဤ Device နှင့် ချိတ်ဆက်ခြင်း
   function bindKeyToDevice(key) {
     localStorage.setItem(BOUND_KEY, key);
   }
 
-  // Key ကို ဤ Device တွင် သုံးခွင့်ရှိမရှိ စစ်ဆေးခြင်း
   function isKeyValidForThisDevice(key) {
     const boundKey = localStorage.getItem(BOUND_KEY);
-    // ဤ Device မှာ Key မသုံးရသေးပါက သုံးခွင့်ပြုမည်
-    if (!boundKey) return true; 
-    // သုံးဖူးပါက မူလ Bind ခဲ့သော Key နှင့် တူမှသာ သုံးခွင့်ပြုမည်
-    return boundKey === key; 
+    if (!boundKey) return true;
+    return boundKey === key;
   }
 
   // ================================================================
-  // 🗓️ Key သက်တမ်းစစ်ဆေးခြင်း
+  // 🗓️ Key သက်တမ်းစစ်ဆေးခြင်း (FIXED)
   // ================================================================
   function isDateInRange(dateStr, startStr, endStr) {
     const date = new Date(dateStr);
@@ -84,11 +79,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function validateKey(key) {
-    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    const today = new Date().toISOString().split('T')[0];
 
-    if (key.length === 8 && EIGHT_CHAR_KEYS.includes(key)) {
+    // 7-character keys
+    if (key.length === 7 && SEV_CHAR_KEYS.includes(key)) {
+      return isDateInRange(today, SEV_CHAR_START, SEV_CHAR_END);
+    }
+    // 8-character keys
+    else if (key.length === 8 && EIGHT_CHAR_KEYS.includes(key)) {
       return isDateInRange(today, EIGHT_CHAR_START, EIGHT_CHAR_END);
-    } else if (key.length === 11 && TEN_CHAR_KEYS.includes(key)) { // TEN_CHAR_KEYS စာရင်းထဲမှ Length ၁၁ လုံးဖြစ်နေ၍ ၁၁ ပြင်ပေးထားပါသည်
+    }
+    // 11-character keys (TEN_CHAR_KEYS)
+    else if (key.length === 11 && TEN_CHAR_KEYS.includes(key)) {
       return isDateInRange(today, TEN_CHAR_START, TEN_CHAR_END);
     }
     return false;
@@ -109,21 +111,18 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // ၁။ Key သက်တမ်းနှင့် စာရင်းထဲရှိမရှိ စစ်ဆေးခြင်း
     if (!validateKey(enteredKey)) {
       loginError.textContent = '❌ သော့မှားနေပါသည် သို့မဟုတ် သက်တမ်းကုန်ဆုံးနေပါသည်။';
       loginError.style.display = 'block';
       return;
     }
 
-    // ၂။ ဤ Device တွင် အခြား Key တစ်ခု Lock ကျထားပြီးပြီလား စစ်ဆေးခြင်း
     if (!isKeyValidForThisDevice(enteredKey)) {
       loginError.textContent = '❌ ဤ Device တွင် အခြား သော့ ပေါင်းစပ်ထားပြီး ဖြစ်ပါသည်။';
       loginError.style.display = 'block';
       return;
     }
 
-    // ၃။ အားလုံး မှန်ကန်ပါက Key ကို ဒီ Device မှာ Lock မှတ်ပြီး Login ဝင်ခွင့်ပြုမည်
     bindKeyToDevice(enteredKey);
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('currentUser', username);
@@ -150,7 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loginError.style.display = 'none';
   }
 
-  // Page Reload လုပ်သည့်အခါ Auto Login စစ်ဆေးခြင်း
   if (localStorage.getItem('isLoggedIn') === 'true') {
     showMainDashboard();
   }
