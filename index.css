@@ -2209,11 +2209,14 @@ input:focus-visible {
 
 /* Card Description */
 .featured-voice p {
+  margin-bottom: 0;
   line-height: 1.7;
 }
 
 /* Voice Test Button */
 .featured-voice .dash-card-btn {
+  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+  border: 1px solid transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2265,6 +2268,7 @@ input:focus-visible {
   }
 
   .featured-voice h3 {
+    padding-right: 72px;
     font-size: 18px;
   }
 
