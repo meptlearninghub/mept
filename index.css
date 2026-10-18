@@ -2130,3 +2130,145 @@ input:focus-visible {
     transform: none;
   }
 }
+
+/* ================================
+   SPEAKING VOICE TEST CARD
+================================ */
+
+.featured-voice {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(14, 165, 233, 0.12),
+      transparent 45%
+    ),
+    var(--card-bg);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.featured-voice:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 18px 40px rgba(14, 165, 233, 0.16);
+}
+
+/* NEW Badge */
+.featured-voice .badge-new {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  padding: 5px 10px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  box-shadow: 0 5px 15px rgba(239, 68, 68, 0.25);
+}
+
+/* Voice Icon */
+.featured-voice .dash-card-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(14, 165, 233, 0.15),
+    rgba(59, 130, 246, 0.10)
+  );
+
+  font-size: 30px;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(56, 189, 248, 0.12);
+}
+
+/* Card Title */
+.featured-voice h3 {
+  margin-bottom: 10px;
+}
+
+/* Card Description */
+.featured-voice p {
+  line-height: 1.7;
+}
+
+/* Voice Test Button */
+.featured-voice .dash-card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  width: 100%;
+
+  margin-top: 18px;
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  color: #fff;
+  text-decoration: none;
+
+  font-weight: 700;
+  font-size: 14px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.featured-voice .dash-card-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 10px 24px rgba(14, 165, 233, 0.28);
+}
+
+.featured-voice .dash-card-btn i {
+  transition: transform 0.25s ease;
+}
+
+.featured-voice .dash-card-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .featured-voice {
+    padding: 20px;
+  }
+
+  .featured-voice .dash-card-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 27px;
+  }
+
+  .featured-voice h3 {
+    font-size: 18px;
+  }
+
+  .featured-voice p {
+    font-size: 13px;
+  }
+}
