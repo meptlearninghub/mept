@@ -4,484 +4,544 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#071a32">
-  <meta name="description" content="MEPT Master Hub - Myanmar seafarers များအတွက် Grammar, Reading, Writing, Listening, Speaking, Picture Speaking နှင့် Mock Test လေ့ကျင့်ရန်။">
-  <title>MEPT Master Hub | Your Maritime English Journey</title>
+  <meta name="theme-color" content="#101b35">
+  <meta name="description" content="MEPT Master Hub — သင်္ဘောသားများအတွက် English self-study, practice questions နှင့် mock test preparation platform.">
+  <title>MEPT Master Hub | Prepare with Confidence</title>
   <link rel="stylesheet" href="index.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Myanmar:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-  <!-- LOGIN SECTION: Existing IDs preserved -->
-  <div id="login-container" class="login-wrapper">
-    <div class="login-decoration decoration-one"></div>
-    <div class="login-decoration decoration-two"></div>
-
-    <div class="login-card">
-      <a href="#" class="brand brand-login" aria-label="MEPT Master Hub">
+  <!-- =====================================================
+       PUBLIC NAVIGATION
+       Everyone can view this section without logging in.
+  ====================================================== -->
+  <header class="public-header" id="publicHeader">
+    <nav class="public-nav container">
+      <a class="brand" href="#home" aria-label="MEPT Master Hub Home">
         <span class="brand-icon">⚓</span>
         <span class="brand-copy">
-          <strong>MEPT <span>MASTER HUB</span></strong>
-          <small>MARITIME ENGLISH PREPARATION</small>
+          <strong>MEPT MASTER HUB</strong>
+          <small>MARITIME ENGLISH LEARNING</small>
         </span>
       </a>
 
-      <div class="login-illustration" aria-hidden="true">
-        <div class="login-orbit orbit-one"></div>
-        <div class="login-orbit orbit-two"></div>
-        <div class="login-ship">🚢</div>
-        <span class="floating-icon float-one">📚</span>
-        <span class="floating-icon float-two">🎧</span>
-        <span class="floating-icon float-three">📝</span>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle"
+              type="button" aria-label="Open navigation"
+              aria-expanded="false">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">What is MEPT?</a>
+        <a href="#skills">Skills</a>
+        <a href="#benefits">Why Us?</a>
+        <button type="button" class="btn btn-nav"
+                data-open-login>Login ဝင်မည် <span>→</span></button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =====================================================
+       PUBLIC LANDING PAGE
+  ====================================================== -->
+  <div id="public-home">
+
+    <!-- HERO -->
+    <section class="hero-section" id="home">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            YOUR MARITIME ENGLISH LEARNING PARTNER
+          </div>
+
+          <h1>
+            Your Journey to
+            <span class="gradient-text">MEPT Success</span>
+            Starts Here.
+          </h1>
+
+          <p class="hero-description">
+            သင်္ဘောသားလူသစ်တွေအတွက် MEPT English Test ကို
+            ယုံကြည်မှုရှိရှိ ဖြေဆိုနိုင်ဖို့ ကိုယ်တိုင်လေ့လာခြင်း၊
+            လေ့ကျင့်ခန်းများနှင့် Mock Test တို့ကို တစ်နေရာတည်းမှာ
+            လေ့လာပြင်ဆင်လိုက်ပါ။
+          </p>
+
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary btn-large"
+                    data-open-login>
+              အခုပဲ စတင်လေ့လာမည် <span>→</span>
+            </button>
+            <a href="#skills" class="btn btn-glass btn-large">
+              သင်ခန်းစာများ ကြည့်မည်
+            </a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-icon">📚</div>
+            <div>
+              <strong>Learn at your own pace</strong>
+              <span>ကိုယ့်အချိန်နဲ့ကိုယ် လေ့လာပြင်ဆင်ပါ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+
+          <div class="hero-card main-visual-card">
+            <div class="visual-top">
+              <div>
+                <span class="visual-label">YOUR LEARNING SPACE</span>
+                <h3>MEPT Preparation</h3>
+              </div>
+              <span class="visual-anchor">⚓</span>
+            </div>
+
+            <div class="visual-illustration">
+              <div class="ocean-line ocean-line-one"></div>
+              <div class="ocean-line ocean-line-two"></div>
+              <div class="ship-illustration">🚢</div>
+              <div class="compass-illustration">🧭</div>
+              <div class="floating-book">📘</div>
+            </div>
+
+            <div class="visual-feature-list">
+              <div><span>✓</span> Self-study Learning Hub</div>
+              <div><span>✓</span> Practice & Mock Tests</div>
+              <div><span>✓</span> Picture Speaking Practice</div>
+            </div>
+
+            <div class="visual-footer">
+              <span class="live-dot"></span>
+              LEARN • PRACTICE • IMPROVE
+            </div>
+          </div>
+
+          <div class="floating-chip chip-top">
+            <span>📝</span>
+            <div><strong>Mock Test</strong><small>Practice anytime</small></div>
+          </div>
+
+          <div class="floating-chip chip-bottom">
+            <span>🎯</span>
+            <div><strong>Build Confidence</strong><small>One step at a time</small></div>
+          </div>
+        </div>
       </div>
 
-      <div class="login-heading">
-        <span class="eyebrow">YOUR JOURNEY STARTS HERE</span>
-        <h1>သင့်ရဲ့ MEPT ခရီးစဉ်ကို<br><span>ဒီနေ့ စတင်လိုက်ပါ။</span></h1>
-        <p class="subtitle">
-          သင်္ဘောသားတစ်ယောက်ဖြစ်ဖို့ ရည်မှန်းထားသူတွေအတွက်
-          Maritime English ကို လေ့လာ၊ လေ့ကျင့်၊ အစမ်းဖြေဆိုနိုင်မယ့်
-          သင့်ရဲ့ ကိုယ်ပိုင် Learning Hub။
-        </p>
+      <div class="hero-bottom container">
+        <span>PREPARE SMARTER</span>
+        <span class="hero-bottom-line"></span>
+        <span>MOVE FORWARD WITH CONFIDENCE</span>
       </div>
+    </section>
+
+    <!-- QUICK HIGHLIGHTS -->
+    <section class="highlights-section">
+      <div class="container highlights-grid">
+        <div class="highlight-item">
+          <span class="highlight-icon">📖</span>
+          <div><strong>Learn</strong><small>စာတွေ့လေ့လာပါ</small></div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">✍️</span>
+          <div><strong>Practice</strong><small>လေ့ကျင့်ခန်းများ ဖြေဆိုပါ</small></div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">📝</span>
+          <div><strong>Mock Test</strong><small>အစမ်းဖြေဆိုပါ</small></div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-icon">🚢</span>
+          <div><strong>Prepare</strong><small>သင်္ဘောသားအလုပ်အတွက် ပြင်ဆင်ပါ</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS MEPT -->
+    <section class="section section-light" id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <div class="about-icon-grid">
+            <div class="about-icon-card about-icon-main">⚓</div>
+            <div class="about-icon-card">📘</div>
+            <div class="about-icon-card">🎧</div>
+            <div class="about-icon-card">🗣️</div>
+            <div class="about-icon-card">📝</div>
+          </div>
+          <div class="about-caption">
+            <span class="caption-check">✓</span>
+            <div>
+              <strong>Prepare Before You Sail</strong>
+              <small>Learn English for your maritime journey.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content reveal">
+          <span class="section-kicker">UNDERSTAND THE EXAM</span>
+          <h2>MEPT ဆိုတာ <span class="text-accent">ဘာလဲ?</span></h2>
+
+          <p>
+            MEPT ဆိုတာ Maritime English Proficiency Test ကို ရည်ညွှန်းတဲ့
+            အမည်ဖြစ်ပြီး ရေကြောင်းလုပ်ငန်းနဲ့ ဆက်စပ်တဲ့ English
+            ဘာသာစကားကျွမ်းကျင်မှုကို စစ်ဆေးဖို့ အသုံးပြုတဲ့
+            စာမေးပွဲအမျိုးအစားတစ်ခု ဖြစ်ပါတယ်။
+          </p>
+
+          <p>
+            သင်္ဘောသားလူသစ်တွေအနေနဲ့ သက်ဆိုင်ရာကုမ္ပဏီ၊ သင်တန်းကျောင်း
+            သို့မဟုတ် အာဏာပိုင်အဖွဲ့အစည်းက သတ်မှတ်ထားတဲ့ စည်းမျဉ်းတွေအရ
+            English Test ဖြေဆိုဖို့ လိုအပ်နိုင်ပါတယ်။
+            ဒါကြောင့် မဖြေခင် ကြိုတင်လေ့လာပြင်ဆင်ထားဖို့ အရေးကြီးပါတယ်။
+          </p>
+
+          <div class="about-points">
+            <div><span>✓</span> English စွမ်းရည်များကို ကြိုတင်လေ့ကျင့်နိုင်ခြင်း</div>
+            <div><span>✓</span> မေးခွန်းပုံစံများနှင့် ရင်းနှီးလာခြင်း</div>
+            <div><span>✓</span> အစမ်းဖြေဆိုပြီး ကိုယ့်အားနည်းချက်ကို သိရှိနိုင်ခြင်း</div>
+          </div>
+
+          <button type="button" class="btn btn-primary"
+                  data-open-login>
+            စတင်လေ့လာမည် <span>→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section section-soft" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">YOUR LEARNING JOURNEY</span>
+          <h2>MEPT အတွက် <span class="text-accent">Skills ၆ မျိုး</span></h2>
+          <p>
+            English skill တစ်ခုချင်းစီကို လေ့လာပြီး
+            မေးခွန်းလေ့ကျင့်ခန်းတွေနဲ့ အဆင့်ဆင့် ပြင်ဆင်လိုက်ပါ။
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <article class="skill-card reveal">
+            <div class="skill-icon icon-purple">📚</div>
+            <span class="skill-number">01 / GRAMMAR</span>
+            <h3>Grammar</h3>
+            <p>English grammar စည်းမျဉ်းများ၊ ဝါကျတည်ဆောက်ပုံနဲ့ မေးခွန်းလေ့ကျင့်ခန်းများကို လေ့လာပါ။</p>
+            <a href="#member-access" class="skill-link" data-open-login>စတင်လေ့လာမည် ↗</a>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon icon-blue">📖</div>
+            <span class="skill-number">02 / READING</span>
+            <h3>Reading</h3>
+            <p>စာပိုဒ်များကို ဖတ်ရှုနားလည်ခြင်း၊ အဓိကအချက်ရှာဖွေခြင်းနဲ့ မေးခွန်းဖြေဆိုခြင်းကို လေ့ကျင့်ပါ။</p>
+            <a href="#member-access" class="skill-link" data-open-login>စတင်လေ့လာမည် ↗</a>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon icon-orange">✍️</div>
+            <span class="skill-number">03 / WRITING</span>
+            <h3>Writing</h3>
+            <p>English ဝါကျများနဲ့ စာပိုဒ်များကို အဓိပ္ပာယ်ရှင်းလင်းစွာ ရေးသားနိုင်ဖို့ လေ့ကျင့်ပါ။</p>
+            <a href="#member-access" class="skill-link" data-open-login>စတင်လေ့လာမည် ↗</a>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon icon-green">🎧</div>
+            <span class="skill-number">04 / LISTENING</span>
+            <h3>Listening</h3>
+            <p>English အသံများကို နားထောင်ပြီး အဓိကအချက်များနဲ့ ပြောဆိုချက်များကို နားလည်အောင် လေ့ကျင့်ပါ။</p>
+            <a href="#member-access" class="skill-link" data-open-login>စတင်လေ့လာမည် ↗</a>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon icon-pink">🗣️</div>
+            <span class="skill-number">05 / SPEAKING</span>
+            <h3>Speaking</h3>
+            <p>English ဖြင့် ပြောဆိုဖြေဆိုခြင်း၊ စကားလုံးအသုံးအနှုန်းနဲ့ ကိုယ့်အတွေးကို ဖော်ပြခြင်းတို့ကို လေ့ကျင့်ပါ။</p>
+            <a href="#member-access" class="skill-link" data-open-login>စတင်လေ့လာမည် ↗</a>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon icon-cyan">🖼️</div>
+            <span class="skill-number">06 / PICTURE SPEAKING</span>
+            <h3>Picture Speaking</h3>
+            <p>ပုံတစ်ပုံကို ကြည့်ရှုလေ့လာပြီး မြင်တွေ့ရတဲ့အရာများကို English ဖြင့် ဖော်ပြလေ့ကျင့်ပါ။</p>
+            <a href="#member-access" class="skill-link" data-open-login>စတင်လေ့လာမည် ↗</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY MEPT MASTER HUB -->
+    <section class="section section-dark" id="benefits">
+      <div class="container">
+        <div class="section-heading section-heading-light reveal">
+          <span class="section-kicker">WHY MEPT MASTER HUB?</span>
+          <h2>ဘာကြောင့် ဒီ Website မှာ <span class="gradient-text">လေ့လာသင့်လဲ?</span></h2>
+          <p>
+            စာတွေ့လေ့လာရုံသာမက ကိုယ်တိုင်လေ့ကျင့်ပြီး
+            ကိုယ့်တိုးတက်မှုကို ပြန်လည်စစ်ဆေးနိုင်ဖို့ ရည်ရွယ်ထားပါတယ်။
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">🌍</div>
+            <h3>Learn Anywhere</h3>
+            <p>အိမ်မှာဖြစ်ဖြစ်၊ ခရီးသွားနေစဉ်ဖြစ်ဖြစ် အင်တာနက်နဲ့ ကိုယ့်အချိန်အလိုက် လေ့လာနိုင်ပါတယ်။</p>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">📚</div>
+            <h3>Learning Hub</h3>
+            <p>သင်ခန်းစာများ၊ လေ့ကျင့်ခန်းများနဲ့ ရရှိနိုင်တဲ့ Answer Keys တွေကို လေ့လာနိုင်ပါတယ်။</p>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">📝</div>
+            <h3>Mock Test</h3>
+            <p>အစမ်းမေးခွန်းတွေ ဖြေဆိုပြီး စနစ်က ပံ့ပိုးပေးတဲ့ Result နဲ့ ကိုယ့်အားနည်းချက်တွေကို ပြန်လည်သုံးသပ်နိုင်ပါတယ်။</p>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">🖼️</div>
+            <h3>Picture Speaking</h3>
+            <p>ပုံတွေကို အခြေခံပြီး English ဖြင့် ပြောဆိုဖော်ပြနိုင်ဖို့ လေ့ကျင့်နိုင်ပါတယ်။</p>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">🗂️</div>
+            <h3>Old Questions</h3>
+            <p>Website မှာ ရရှိနိုင်တဲ့ မေးခွန်းဟောင်းတွေနဲ့ မေးခွန်းပုံစံတွေကို ပြန်လည်လေ့လာနိုင်ပါတယ်။</p>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">🎯</div>
+            <h3>Build Confidence</h3>
+            <p>ပုံမှန်လေ့ကျင့်ခြင်းဖြင့် English အသုံးပြုမှုနဲ့ စာမေးပွဲအတွက် ယုံကြည်မှု တိုးတက်လာစေဖို့ ရည်ရွယ်ပါတယ်။</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOCK TEST -->
+    <section class="section section-light" id="mock-test-info">
+      <div class="container mock-banner reveal">
+        <div class="mock-banner-content">
+          <span class="section-kicker">PRACTICE BEFORE THE EXAM</span>
+          <h2>စာမေးပွဲမဖြေခင် <span class="text-accent">အစမ်းဖြေကြည့်ပါ။</span></h2>
+          <p>
+            MEPT Mock Test ကို အသုံးပြုပြီး မေးခွန်းပုံစံများနဲ့ ရင်းနှီးအောင်
+            လေ့ကျင့်ပါ။ ဖြေဆိုပြီးနောက် Website က ပံ့ပိုးပေးတဲ့ Result
+            နဲ့ ကိုယ့်ရဲ့ လေ့ကျင့်မှုကို ပြန်လည်သုံးသပ်နိုင်ပါတယ်။
+          </p>
+          <button type="button" class="btn btn-primary btn-large"
+                  data-open-login>
+            Mock Test စမ်းဖြေမည် <span>→</span>
+          </button>
+        </div>
+        <div class="mock-banner-visual">
+          <div class="mock-paper">
+            <div class="paper-top"><span>MEPT PRACTICE</span><span>✓</span></div>
+            <div class="paper-line paper-line-long"></div>
+            <div class="paper-line"></div>
+            <div class="paper-question">01. Choose the correct answer.</div>
+            <div class="paper-option"><span>A</span><div></div></div>
+            <div class="paper-option selected"><span>B</span><div></div></div>
+            <div class="paper-option"><span>C</span><div></div></div>
+            <div class="paper-option"><span>D</span><div></div></div>
+            <div class="paper-progress"><span></span></div>
+            <small>KEEP PRACTICING</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="member-access">
+      <div class="container final-cta-inner reveal">
+        <div class="cta-anchor">⚓</div>
+        <span class="section-kicker">YOUR NEXT STEP STARTS TODAY</span>
+        <h2>Ready to Prepare for MEPT?</h2>
+        <p>
+          အခုကတည်းက လေ့လာပြင်ဆင်ပြီး သင်္ဘောသားဘဝခရီးလမ်းအတွက်
+          English စွမ်းရည်တွေကို တစ်ဆင့်ချင်း တိုးတက်အောင် လုပ်ဆောင်လိုက်ပါ။
+        </p>
+        <button type="button" class="btn btn-primary btn-large"
+                data-open-login>
+          Login ဝင်ပြီး စတင်လေ့လာမည် <span>→</span>
+        </button>
+        <small>Existing members — Username နှင့် Key ဖြင့် ဝင်ရောက်ပါ။</small>
+      </div>
+    </section>
+
+    <!-- PUBLIC FOOTER -->
+    <footer class="public-footer">
+      <div class="container footer-inner">
+        <a class="brand footer-brand" href="#home">
+          <span class="brand-icon">⚓</span>
+          <span class="brand-copy">
+            <strong>MEPT MASTER HUB</strong>
+            <small>MARITIME ENGLISH LEARNING</small>
+          </span>
+        </a>
+        <p>Learn • Practice • Prepare with Confidence</p>
+        <span>© <span class="current-year"></span> MEPT Master Hub</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- =====================================================
+       LOGIN SECTION
+       Hidden until a visitor clicks a Login CTA.
+       Existing login IDs and form fields preserved.
+  ====================================================== -->
+  <section id="login-container" class="login-wrapper hidden">
+    <div class="login-backdrop"></div>
+
+    <div class="login-card">
+      <button type="button" class="login-back"
+              id="backToHome">← Home သို့ပြန်မည်</button>
+
+      <div class="login-brand-icon">⚓</div>
+      <span class="section-kicker">WELCOME BACK</span>
+      <h2>MEPT Master Hub</h2>
+      <p class="subtitle">
+        သင့်ရဲ့ MEPT လေ့လာမှုခရီးစဉ်ကို ဆက်လက်လုပ်ဆောင်ဖို့
+        Account ဖြင့် Login ဝင်ပါ။
+      </p>
 
       <form id="loginForm">
         <div class="input-group">
           <label for="username">Username</label>
-          <div class="input-wrap">
-            <span class="field-icon">👤</span>
-            <input
-              type="text"
-              id="username"
-              placeholder="သင့်အမည် ရိုက်ထည့်ပါ"
-              autocomplete="username"
-              required
-            >
-          </div>
+          <input type="text" id="username" name="username"
+                 placeholder="အမည် ရိုက်ထည့်ပါ"
+                 autocomplete="username" required>
         </div>
 
         <div class="input-group">
-          <label for="password">Access Key</label>
-          <div class="input-wrap">
-            <span class="field-icon">🔑</span>
-            <input
-              type="password"
-              id="password"
-              placeholder="သတ်မှတ်ထားသော Key ရိုက်ထည့်ပါ"
-              autocomplete="current-password"
-              required
-            >
-            <button type="button" class="password-toggle" id="togglePassword"
-              aria-label="Show or hide password" aria-pressed="false">👁</button>
+          <label for="password">Key (သော့)</label>
+          <div class="password-wrap">
+            <input type="password" id="password" name="password"
+                   placeholder="သတ်မှတ်ထားသော Key ကို ရိုက်ထည့်ပါ"
+                   autocomplete="current-password" required>
+            <button type="button" id="togglePassword"
+                    class="password-toggle"
+                    aria-label="Show or hide password">👁</button>
           </div>
-          <small class="hint">🔒 သတ်မှတ်ထားသော Account Key ဖြင့် ဝင်ရောက်ပါ။</small>
+          <small class="hint">🔐 1 User • 1 Key • 1 Device</small>
         </div>
 
-        <button type="submit" class="btn-primary" id="loginSubmit">
-          <span>Login ဝင်မည်</span>
-          <span class="button-arrow">→</span>
+        <button type="submit" class="btn btn-primary login-submit">
+          <span>Login ဝင်မည်</span><span>→</span>
         </button>
 
-        <div id="loginError" class="login-error" style="display:none;" role="alert" aria-live="polite">
+        <div id="loginError" class="login-error" role="alert"
+             aria-live="polite" style="display:none;">
           ❌ သော့မှားနေပါသည်။ ကျေးဇူးပြု၍ ပြန်လည်စစ်ဆေးပါ။
         </div>
       </form>
 
-      <div class="login-security">
-        <span>🛡️</span>
-        <p>1 User · 1 Key · 1 Device<br><small>သင့် Account အသုံးပြုမှုစည်းမျဉ်းများကို လိုက်နာပါ။</small></p>
-      </div>
-
       <div class="account-info">
         <p>Account မရှိသေးဘူးလား?</p>
-        <a href="https://t.me/aunglay400500" target="_blank"
-           rel="noopener noreferrer" class="telegram-link">
-          📱 Telegram မှ Account လျှောက်ထားရန် ↗
-        </a>
+        <a href="https://t.me/aunglay400500"
+           target="_blank" rel="noopener noreferrer"
+           class="telegram-link">📱 Telegram မှ Account ဆက်သွယ်ရန် ↗</a>
       </div>
 
-      <p class="login-footer">© <span class="current-year"></span> MEPT Master Hub · Learn Anywhere</p>
+      <p class="login-security">SECURE ACCESS • MEPT MASTER HUB</p>
     </div>
-  </div>
+  </section>
 
-  <!-- MAIN DASHBOARD: Existing ID preserved -->
+  <!-- =====================================================
+       MEMBER DASHBOARD
+       Available only after successful login in this UI.
+  ====================================================== -->
   <div id="main-container" class="main-wrapper hidden">
-
-    <!-- NAVIGATION -->
-    <header class="navbar">
-      <a href="#dashboard" class="brand" aria-label="Go to dashboard">
+    <header class="member-navbar">
+      <a href="#" class="brand" aria-label="Member Dashboard">
         <span class="brand-icon">⚓</span>
         <span class="brand-copy">
-          <strong>MEPT <span>MASTER HUB</span></strong>
-          <small>MARITIME ENGLISH PREPARATION</small>
+          <strong>MEPT MASTER HUB</strong>
+          <small>MEMBER LEARNING SPACE</small>
         </span>
       </a>
-
-      <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle"
-        aria-label="Toggle navigation" aria-expanded="false">☰</button>
-
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#dashboard" class="nav-link active">Home</a>
-        <a href="#about-mept" class="nav-link">About MEPT</a>
-        <a href="#skills" class="nav-link">Practice Skills</a>
-        <a href="#features" class="nav-link">Features</a>
-      </nav>
-
-      <button type="button" id="logoutBtn" class="btn-outline">
-        <span>↪</span> Logout
-      </button>
+      <div class="member-nav-actions">
+        <span class="member-badge"><span class="live-dot"></span> Member Area</span>
+        <button id="logoutBtn" class="btn btn-logout" type="button">
+          Logout ↗
+        </button>
+      </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero-section" id="dashboard">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="status-dot"></span>
-          YOUR MARITIME ENGLISH LEARNING PARTNER
-        </div>
+    <main class="dashboard-content">
+      <section class="dashboard-welcome">
+        <span class="section-kicker">YOUR LEARNING SPACE</span>
+        <h1>Welcome back, <span id="welcomeUsername">Seafarer</span>! 👋</h1>
+        <p>ဒီနေ့လည်း MEPT အတွက် အဆင့်တစ်ဆင့် တိုးတက်အောင် လေ့လာလိုက်ပါ။</p>
+      </section>
 
-        <h1>
-          Your MEPT Journey.<br>
-          <span>Your Future at Sea.</span>
-        </h1>
-
-        <p class="hero-description">
-          သင်္ဘောသားအဖြစ် အနာဂတ်ကို တည်ဆောက်နေပြီလား?
-          MEPT အတွက် လိုအပ်တဲ့ English Skills တွေကို
-          ကိုယ်ပိုင်အချိန်၊ ကိုယ်ပိုင်နေရာမှာ လေ့လာလေ့ကျင့်ပြီး
-          စာမေးပွဲအတွက် ယုံကြည်မှု တည်ဆောက်လိုက်ပါ။
-        </p>
-
-        <div class="hero-actions">
-          <a href="#skills" class="btn-primary hero-cta">
-            စတင်လေ့လာမည် <span>→</span>
-          </a>
-          <a href="#about-mept" class="btn-glass">
-            MEPT အကြောင်း သိရှိရန် ↓
-          </a>
-        </div>
-
-        <div class="hero-highlights">
-          <div class="highlight-item">
-            <span class="highlight-icon">📚</span>
-            <span><strong>Learn</strong><small>စာတွေ့လေ့လာခြင်း</small></span>
+      <section class="dashboard-section">
+        <div class="dashboard-heading">
+          <div>
+            <span class="section-kicker">CONTINUE YOUR JOURNEY</span>
+            <h2>သင့်ရဲ့ Learning Hub</h2>
           </div>
-          <div class="highlight-item">
-            <span class="highlight-icon">🎯</span>
-            <span><strong>Practice</strong><small>ကျွမ်းကျင်မှု လေ့ကျင့်ခြင်း</small></span>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-icon">📝</span>
-            <span><strong>Test</strong><small>အစမ်းဖြေဆိုခြင်း</small></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-visual" aria-label="Maritime English learning illustration">
-        <div class="visual-glow"></div>
-        <div class="visual-ring ring-outer"></div>
-        <div class="visual-ring ring-inner"></div>
-        <div class="hero-ship">🚢</div>
-
-        <div class="floating-card float-card-top">
-          <span class="floating-card-icon">🎧</span>
-          <span><strong>Listening</strong><small>Train your ears</small></span>
+          <span class="member-badge">MEMBER ACCESS</span>
         </div>
 
-        <div class="floating-card float-card-left">
-          <span class="floating-card-icon">📖</span>
-          <span><strong>Grammar</strong><small>Build your basics</small></span>
-        </div>
-
-        <div class="floating-card float-card-bottom">
-          <span class="floating-card-icon">📝</span>
-          <span><strong>Mock Test</strong><small>Check your readiness</small></span>
-        </div>
-
-        <div class="visual-caption">
-          <span class="caption-line"></span>
-          <span>PREPARE TODAY. SAIL TOMORROW.</span>
-        </div>
-      </div>
-
-      <div class="hero-wave" aria-hidden="true"></div>
-    </section>
-
-    <!-- QUICK VALUE STRIP -->
-    <section class="value-strip" aria-label="Platform benefits">
-      <div class="value-item">
-        <span>🌍</span>
-        <div><strong>Learn Anywhere</strong><small>အချိန်မရွေး၊ နေရာမရွေး</small></div>
-      </div>
-      <div class="value-item">
-        <span>🎯</span>
-        <div><strong>Skill-Based Practice</strong><small>Skill တစ်ခုချင်းစီ လေ့ကျင့်ပါ</small></div>
-      </div>
-      <div class="value-item">
-        <span>📝</span>
-        <div><strong>Mock Test Practice</strong><small>စာမေးပွဲအတွက် ပြင်ဆင်ပါ</small></div>
-      </div>
-      <div class="value-item">
-        <span>📂</span>
-        <div><strong>Old Questions</strong><small>မေးခွန်းပုံစံများ လေ့လာပါ</small></div>
-      </div>
-    </section>
-
-    <!-- ABOUT MEPT -->
-    <section class="content-section about-section reveal" id="about-mept">
-      <div class="section-heading">
-        <span class="eyebrow">UNDERSTAND YOUR EXAM</span>
-        <h2>MEPT ဆိုတာ <span>ဘာလဲ?</span></h2>
-        <p>သင်္ဘောသားအလုပ်အကိုင်အတွက် English Communication ကို ပြင်ဆင်ပါ။</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-main-card">
-          <div class="about-icon">⚓</div>
-          <h3>Maritime English Proficiency Test</h3>
-          <p>
-            MEPT ဆိုတာ Maritime English Proficiency Test ကို ရည်ညွှန်းပါတယ်။
-            သင်္ဘောသားအဖြစ် စတင်ဝင်ရောက်မယ့်သူတွေနဲ့ သက်ဆိုင်ရာ
-            စာမေးပွဲဖြေရန် လိုအပ်သူတွေအတွက် English Language Skills
-            ပြင်ဆင်လေ့ကျင့်ဖို့ အရေးကြီးပါတယ်။
-          </p>
-          <p>
-            သက်ဆိုင်ရာ ကုမ္ပဏီ၊ သင်တန်းကျောင်း သို့မဟုတ် အာဏာပိုင်အဖွဲ့၏
-            လိုအပ်ချက်များအလိုက် စာမေးပွဲစည်းမျဉ်းများ ကွာခြားနိုင်ပါတယ်။
-          </p>
-        </div>
-
-        <div class="about-side">
-          <div class="info-card">
-            <span class="info-card-icon">🗣️</span>
-            <div>
-              <h3>English Communication</h3>
-              <p>နားထောင်ခြင်း၊ ဖတ်ရှုခြင်း၊ ရေးသားခြင်းနဲ့ ပြောဆိုခြင်းကို လေ့ကျင့်ပါ။</p>
-            </div>
-          </div>
-          <div class="info-card">
-            <span class="info-card-icon">🚢</span>
-            <div>
-              <h3>Maritime Career Preparation</h3>
-              <p>သင်္ဘောသားအလုပ်အတွက် လိုအပ်တဲ့ English ပြင်ဆင်မှုကို အထောက်အကူပြုပါ။</p>
-            </div>
-          </div>
-          <div class="info-card">
-            <span class="info-card-icon">💡</span>
-            <div>
-              <h3>Practice Before Exam Day</h3>
-              <p>မသိသေးတဲ့အပိုင်းတွေကို ကြိုတင်သိရှိပြီး ထပ်မံလေ့ကျင့်ပါ။</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SIX SKILLS -->
-    <section class="content-section skills-section reveal" id="skills">
-      <div class="section-heading">
-        <span class="eyebrow">YOUR LEARNING ROADMAP</span>
-        <h2>MEPT အတွက် <span>Skills ၆ မျိုး</span></h2>
-        <p>ကိုယ့်အားနည်းချက်ကို ရှာဖွေပြီး Skill တစ်ခုချင်းစီကို လေ့ကျင့်ပါ။</p>
-      </div>
-
-      <div class="skills-grid">
-        <a href="learning.html" class="skill-card skill-grammar">
-          <div class="skill-top"><span class="skill-icon">📘</span><span class="skill-number">01</span></div>
-          <h3>Grammar</h3>
-          <p>Sentence structure, Tenses နဲ့ English grammar အခြေခံတွေကို လေ့လာပါ။</p>
-          <span class="skill-link">လေ့လာမည် <span>→</span></span>
-        </a>
-
-        <a href="learning.html" class="skill-card skill-reading">
-          <div class="skill-top"><span class="skill-icon">📖</span><span class="skill-number">02</span></div>
-          <h3>Reading</h3>
-          <p>စာပိုဒ်ဖတ်ရှုခြင်း၊ အဓိကအချက်ရှာဖွေခြင်းနဲ့ နားလည်မှုကို လေ့ကျင့်ပါ။</p>
-          <span class="skill-link">လေ့လာမည် <span>→</span></span>
-        </a>
-
-        <a href="learning.html" class="skill-card skill-listening">
-          <div class="skill-top"><span class="skill-icon">🎧</span><span class="skill-number">03</span></div>
-          <h3>Listening</h3>
-          <p>ကြားနေရတဲ့ English စကားလုံးတွေနဲ့ အဓိပ္ပာယ်ကို နားလည်အောင် လေ့ကျင့်ပါ။</p>
-          <span class="skill-link">လေ့လာမည် <span>→</span></span>
-        </a>
-
-        <a href="learning.html" class="skill-card skill-writing">
-          <div class="skill-top"><span class="skill-icon">✍️</span><span class="skill-number">04</span></div>
-          <h3>Writing</h3>
-          <p>Grammar မှန်ကန်တဲ့ စာကြောင်းတွေနဲ့ အဖြေတွေကို ရေးသားလေ့ကျင့်ပါ။</p>
-          <span class="skill-link">လေ့လာမည် <span>→</span></span>
-        </a>
-
-        <a href="learning.html" class="skill-card skill-speaking">
-          <div class="skill-top"><span class="skill-icon">🗣️</span><span class="skill-number">05</span></div>
-          <h3>Speaking</h3>
-          <p>English လို စကားပြောခြင်း၊ အဖြေဖွဲ့စည်းခြင်းနဲ့ ယုံကြည်မှုကို လေ့ကျင့်ပါ။</p>
-          <span class="skill-link">လေ့လာမည် <span>→</span></span>
-        </a>
-
-        <a href="picturespeaking.html" class="skill-card skill-picture">
-          <div class="skill-top"><span class="skill-icon">🖼️</span><span class="skill-number">06</span></div>
-          <h3>Picture Speaking</h3>
-          <p>ပုံတစ်ပုံကို ကြည့်ပြီး မြင်ရတဲ့အရာတွေကို English လို ဖော်ပြလေ့ကျင့်ပါ။</p>
-          <span class="skill-link">လေ့ကျင့်မည် <span>→</span></span>
-        </a>
-      </div>
-    </section>
-
-    <!-- MOCK TEST FEATURE -->
-    <section class="mock-banner reveal" id="mock-test">
-      <div class="mock-decoration mock-decoration-one"></div>
-      <div class="mock-decoration mock-decoration-two"></div>
-
-      <div class="mock-content">
-        <span class="eyebrow light-eyebrow">TEST YOUR PREPARATION</span>
-        <h2>စာမေးပွဲမတိုင်ခင်<br><span>ကိုယ့်အရည်အချင်းကို စမ်းသပ်ကြည့်ပါ။</span></h2>
-        <p>
-          Mock Test ကို ဖြေဆိုပြီး ရလဒ်ရရှိနိုင်တဲ့ လုပ်ဆောင်ချက်တွေကနေ
-          ကိုယ့်ရဲ့လေ့ကျင့်မှုကို ပြန်လည်သုံးသပ်ပါ။
-          Result နဲ့ Grade တွေဟာ လက်ရှိ Test စနစ်မှာ ပါဝင်သည့်
-          လုပ်ဆောင်ချက်များအပေါ် မူတည်ပါတယ်။
-        </p>
-        <a href="mocktest.html" class="btn-light">
-          Mock Test ဖြေဆိုမည် <span>→</span>
-        </a>
-      </div>
-
-      <div class="mock-visual">
-        <div class="test-paper">
-          <div class="paper-top"><span>MEPT</span><span>✦</span></div>
-          <div class="paper-title">PRACTICE TEST</div>
-          <div class="paper-line"></div>
-          <div class="paper-line short"></div>
-          <div class="paper-question"><span>01</span><i></i></div>
-          <div class="paper-question"><span>02</span><i></i></div>
-          <div class="paper-question"><span>03</span><i></i></div>
-          <div class="paper-check">✓</div>
-          <div class="paper-footer">KEEP PRACTICING</div>
-        </div>
-        <div class="mock-floating-score"><span>🎯</span><div><strong>Practice</strong><small>Track your readiness</small></div></div>
-      </div>
-    </section>
-
-    <!-- PLATFORM FEATURES -->
-    <section class="content-section features-section reveal" id="features">
-      <div class="section-heading">
-        <span class="eyebrow">ALL IN ONE PLACE</span>
-        <h2>ဘာကြောင့် <span>MEPT Master Hub</span> ကို သုံးသင့်လဲ?</h2>
-        <p>လေ့လာခြင်း၊ လေ့ကျင့်ခြင်းနဲ့ ကိုယ့်တိုးတက်မှုကို ပြန်လည်စစ်ဆေးခြင်းတို့ကို တစ်နေရာတည်းမှာ ပြုလုပ်နိုင်ဖို့။</p>
-      </div>
-
-      <div class="features-grid">
-        <a href="learning.html" class="feature-card">
-          <span class="feature-icon feature-purple">📚</span>
-          <div class="feature-text">
+        <div class="dashboard-grid">
+          <article class="dashboard-card">
+            <div class="dashboard-card-icon icon-purple">📚</div>
             <h3>Learning Hub</h3>
-            <p>သင်ခန်းစာများ၊ လေ့ကျင့်ခန်းများနဲ့ ရရှိနိုင်သော Answer Keys များကို လေ့လာပါ။</p>
-            <span class="text-link">Start learning →</span>
-          </div>
-        </a>
+            <p>Grammar, Reading, Writing, Listening နဲ့ Speaking သင်ခန်းစာများ၊ ရရှိနိုင်တဲ့ Answer Keys တွေကို လေ့လာပါ။</p>
+            <a href="learning.html" class="btn btn-primary dashboard-btn">လေ့လာမည် →</a>
+          </article>
 
-        <a href="mocktest.html" class="feature-card feature-highlight">
-          <span class="feature-icon feature-blue">📝</span>
-          <div class="feature-text">
-            <span class="mini-label">RECOMMENDED PRACTICE</span>
+          <article class="dashboard-card">
+            <div class="dashboard-card-icon icon-blue">📝</div>
             <h3>MEPT Mock Test</h3>
-            <p>အစမ်းဖြေဆိုပြီး သင့်ရဲ့လေ့ကျင့်မှုအဆင့်ကို စစ်ဆေးပါ။</p>
-            <span class="text-link">Try a mock test →</span>
-          </div>
-        </a>
+            <p>အစမ်းမေးခွန်းတွေ ဖြေဆိုပြီး Website က ပံ့ပိုးပေးတဲ့ Result ကို ပြန်လည်စစ်ဆေးပါ။</p>
+            <a href="mocktest.html" class="btn btn-primary dashboard-btn">အစမ်းဖြေမည် →</a>
+          </article>
 
-        <a href="picturespeaking.html" class="feature-card">
-          <span class="feature-icon feature-orange">🖼️</span>
-          <div class="feature-text">
+          <article class="dashboard-card">
+            <div class="dashboard-card-icon icon-cyan">🖼️</div>
             <h3>Picture Speaking</h3>
-            <p>ပုံကိုကြည့်ပြီး English လို ဖော်ပြခြင်းနဲ့ Speaking လေ့ကျင့်မှုကို တိုးတက်စေပါ။</p>
-            <span class="text-link">Start practicing →</span>
-          </div>
-        </a>
+            <p>ပုံတွေကို ကြည့်ရှုပြီး English ဖြင့် ဖော်ပြပြောဆိုနိုင်ဖို့ လေ့ကျင့်ပါ။</p>
+            <a href="picturespeaking.html" class="btn btn-primary dashboard-btn">လေ့ကျင့်မည် →</a>
+          </article>
 
-        <a href="oldquestions.html" class="feature-card">
-          <span class="feature-icon feature-green">📂</span>
-          <div class="feature-text">
+          <article class="dashboard-card">
+            <div class="dashboard-card-icon icon-orange">🗂️</div>
             <h3>Old Questions</h3>
-            <p>ရရှိနိုင်သော မေးခွန်းဟောင်းများနဲ့ မေးခွန်းပုံစံတွေကို ပြန်လည်လေ့လာပါ။</p>
-            <span class="text-link">Explore questions →</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- STUDY METHOD -->
-    <section class="content-section roadmap-section reveal">
-      <div class="section-heading">
-        <span class="eyebrow">A SIMPLE STUDY PLAN</span>
-        <h2>ဘယ်လို <span>စတင်လေ့လာမလဲ?</span></h2>
-        <p>တစ်ဆင့်ချင်းစီ လေ့ကျင့်သွားပါ။ ကိုယ့်အတွက် အဆင်ပြေတဲ့အချိန်ကို ရွေးချယ်နိုင်ပါတယ်။</p>
-      </div>
-
-      <div class="roadmap-grid">
-        <div class="roadmap-item">
-          <span class="roadmap-number">01</span>
-          <span class="roadmap-icon">📘</span>
-          <h3>Learn</h3>
-          <p>Learning Hub မှာ သင်ခန်းစာနဲ့ အခြေခံတွေကို လေ့လာပါ။</p>
+            <p>Website မှာ ရရှိနိုင်တဲ့ မေးခွန်းဟောင်းများနဲ့ မေးခွန်းပုံစံတွေကို ပြန်လည်လေ့လာပါ။</p>
+            <a href="oldquestions.html" class="btn btn-primary dashboard-btn">ကြည့်ရှုမည် →</a>
+          </article>
         </div>
-        <div class="roadmap-connector">→</div>
-        <div class="roadmap-item">
-          <span class="roadmap-number">02</span>
-          <span class="roadmap-icon">🎧</span>
-          <h3>Practice</h3>
-          <p>Skills တစ်ခုချင်းစီကို လေ့ကျင့်ခန်းတွေနဲ့ ထပ်ခါတလဲလဲ လေ့ကျင့်ပါ။</p>
+      </section>
+
+      <section class="dashboard-tip">
+        <span>💡</span>
+        <div>
+          <strong>Learning Tip</strong>
+          <p>နေ့စဉ် ပုံမှန်လေ့လာပါ။ မသိတဲ့အချက်တွေကို ပြန်လည်သုံးသပ်ပြီး Mock Test နဲ့ လေ့ကျင့်မှုကို စစ်ဆေးပါ။</p>
         </div>
-        <div class="roadmap-connector">→</div>
-        <div class="roadmap-item">
-          <span class="roadmap-number">03</span>
-          <span class="roadmap-icon">📝</span>
-          <h3>Test & Review</h3>
-          <p>Mock Test ဖြေပြီး မှားခဲ့တဲ့အပိုင်းတွေကို ပြန်လည်လေ့လာပါ။</p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- CTA -->
-    <section class="final-cta reveal">
-      <div class="cta-compass">⚓</div>
-      <span class="eyebrow light-eyebrow">YOUR FUTURE STARTS WITH PREPARATION</span>
-      <h2>အဆင်သင့်ဖြစ်ဖို့ ဒီနေ့ကစပြီး လေ့ကျင့်လိုက်ပါ။</h2>
-      <p>Learn Anywhere · Practice Regularly · Prepare with Confidence</p>
-      <div class="cta-actions">
-        <a href="#skills" class="btn-light">Skills များ လေ့လာမည် ↑</a>
-        <a href="mocktest.html" class="btn-glass">Mock Test စတင်မည် →</a>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <a href="#dashboard" class="brand footer-brand">
-        <span class="brand-icon">⚓</span>
-        <span class="brand-copy">
-          <strong>MEPT <span>MASTER HUB</span></strong>
-          <small>MARITIME ENGLISH PREPARATION</small>
-        </span>
-      </a>
-
-      <p>သင်ယူပါ · လေ့ကျင့်ပါ · သင့်အနာဂတ်အတွက် ပြင်ဆင်ပါ</p>
-
-      <div class="footer-links">
-        <a href="#about-mept">About MEPT</a>
-        <a href="#skills">Skills</a>
-        <a href="mocktest.html">Mock Test</a>
-        <a href="oldquestions.html">Old Questions</a>
-      </div>
-
-      <p class="copyright">© <span class="current-year"></span> MEPT Master Hub. All rights reserved.</p>
+    <footer class="member-footer">
+      © <span class="current-year"></span> MEPT Master Hub · Member Learning Space
     </footer>
-
   </div>
 
   <script src="index.js"></script>
